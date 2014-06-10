@@ -1,0 +1,42 @@
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="interlegis.portalmodelo.transparency">
+  <schema>
+    <field name="title" type="zope.schema.TextLine">
+      <description />
+      <required>True</required>
+      <title>Title</title>
+    </field>
+    <field name="description" type="zope.schema.Text">
+      <description />
+      <required>False</required>
+      <title>Description</title>
+    </field>
+      <field name="remoteUrl" type="zope.schema.TextLine">
+        <description>Link para fonte da informação
+        </description>
+        <title>Link</title>
+        <required>False</required>
+      </field>
+    <field name="start_date" type="zope.schema.Date">
+        <description />
+        <title i18n:translate="">Início do período</title>
+        <required>False</required>
+    </field>
+    <field name="end_date" type="zope.schema.Date">
+        <description />
+        <title i18n:translate="">Final do período</title>
+        <required>False</required>
+    </field>
+    <field name="file" type="plone.namedfile.field.NamedBlobFile"
+        form:validator="interlegis.portalmodelo.transparency.content.csvdata.CSVValidator"
+        marshal:primary="true">
+       <description />
+       <title>Arquivo CSV</title>
+       <required>True</required>
+    </field>
+  </schema>
+</model>

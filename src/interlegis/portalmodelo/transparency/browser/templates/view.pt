@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    metal:use-macro="context/main_template/macros/master">
+
+    <metal:block fill-slot="content-core">
+        <!-- Metadata -->
+        <h3>Metadados</h3>
+        <div>
+            <span tal:condition="view/period">Período: <span tal:replace="view/period">01/2014 a 02/2014</span></span><br />
+            <span tal:condition="context/remoteUrl">Link Externo<a href="" tal:attributes="href string:${context/remoteUrl}"
+            tal:content="context/remoteUrl">Link Externo</a></span><br />
+        </div>
+        <!-- Download info -->
+        <h3>Download</h3>
+        <tal:block>
+          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/${view/filename}">
+            <img src="" alt=""
+                 width="48" height="48"
+                 tal:attributes="src string:${context/portal_url}/++resource++interlegis.portalmodelo.transparency/csv_download.png;
+                                 alt string:Icone de Dados Tabulares"/>
+            <tal:filename tal:replace="view/filename"/>
+          </a>
+          <span class="discreet">
+              &mdash;
+              <span tal:replace="view/doc_type">ContentType</span>,
+              <tal:size content="view/display_size">?</tal:size>
+          </span>
+        </tal:block>
+        <!-- Data Table -->
+        <h3>Dados</h3>
+        <div tal:replace="structure view/table"> </div>
+    </metal:block>
+
+</html>

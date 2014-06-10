@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="interlegis.portalmodelo.transparency">
+
+  <include file="dependencies.zcml" />
+
+  <permission
+      id="interlegis.portalmodelo.transparency.AddCSVData"
+      title="interlegis.portalmodelo.transparency: Add CSVData"
+      />
+
+  <!-- Suporte ao Generic Setup-->
+  <include file="profiles.zcml" />
+
+  <include package=".browser" />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="interlegis.portalmodelo.transparency"
+      directory="static"
+      />
+
+  <!-- Indexers -->
+  <adapter name="start" factory=".content.csvdata.start_date" />
+  <adapter name="end" factory=".content.csvdata.end_date" />
+
+</configure>
