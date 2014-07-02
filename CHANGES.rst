@@ -4,7 +4,7 @@ Changelog
 1.0a2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Primeiro release público.
 
 
 1.0a1 (2014-06-05)
