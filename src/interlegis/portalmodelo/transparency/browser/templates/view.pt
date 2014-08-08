@@ -15,7 +15,7 @@
         <!-- Download info -->
         <h3>Download</h3>
         <tal:block>
-          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/${view/filename}">
+          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/file/${view/filename}">
             <img src="" alt=""
                  width="48" height="48"
                  tal:attributes="src string:${context/portal_url}/++resource++interlegis.portalmodelo.transparency/csv_download.png;

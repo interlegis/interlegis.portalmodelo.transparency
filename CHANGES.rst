@@ -4,7 +4,8 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Corrige url de download do arquivo tabular
+  [ericof]
 
 
 1.0b1 (2014-07-02)
