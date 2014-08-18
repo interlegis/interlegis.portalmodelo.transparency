@@ -4,14 +4,18 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Corrige url de download do arquivo tabular
+- Incorporate rows package. This is supposed to be a temporary solution.
+  [ericof]
+
+- Fix download url for tabular data.
   [ericof]
 
 
 1.0b1 (2014-07-02)
 ------------------
 
-- Primeiro release público.
+- First public release
+  [interlegis]
 
 
 1.0a1 (2014-06-05)
