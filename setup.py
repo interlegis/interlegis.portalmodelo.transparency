@@ -40,12 +40,12 @@ setup(
     zip_safe=False,
     install_requires=[
         'interlegis.portalmodelo.api',
+        'lxml',
         'plone.app.dexterity [grok]',
         'plone.app.referenceablebehavior',
         'plone.dexterity',
         'plone.directives.form',
         'Products.GenericSetup',
-        'rows [html]',
         'setuptools',
         'zope.i18nmessageid',
         'zope.interface',

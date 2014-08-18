@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-
-from interlegis.portalmodelo.transparency.interfaces import ICSVData
 from five import grok
+from interlegis.portalmodelo.transparency import rows
+from interlegis.portalmodelo.transparency.interfaces import ICSVData
 
-import rows
 import StringIO
 
 grok.templatedir('templates')
