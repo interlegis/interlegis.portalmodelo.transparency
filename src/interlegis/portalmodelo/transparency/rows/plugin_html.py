@@ -56,8 +56,8 @@ def export_to_html(table, filename=None, encoding='utf-8'):
     for index, row in enumerate(table, start=1):
         css_class = u'odd' if index % 2 == 1 else u'even'
         result.append(u'    <tr class="{}">'.format(css_class))
-        result.extend([u'      <td>{}</td>'.format(row[field] or u'')
-                      for field in fields])
+        result.extend([u'      <td>{}</td>'.format(cell or u'')
+                      for cell in row])
         result.extend([u'    </tr>', u''])
     result.extend([u'  </tbody>', u'</table>', u''])
     html = u'\n'.join(result)

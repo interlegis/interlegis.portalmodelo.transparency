@@ -236,7 +236,7 @@ class Table(BaseTable):
             else:
                 return list(columns[self.fields.index(item)])
         elif isinstance(item, (int, slice)):
-            return dict(zip(self.fields, self.convert_row(self._rows[item])))
+            return self.convert_row(self._rows[item])
         else:
             raise ValueError()
 
