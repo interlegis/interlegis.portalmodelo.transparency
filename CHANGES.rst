@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0b2 (unreleased)
+1.0b2 (2014-08-25)
 ------------------
 
 - Incorporate rows package. This is supposed to be a temporary solution.
