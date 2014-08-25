@@ -3,7 +3,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-version = '1.0b2'
+version = 'y.dev0'
 description = 'Portal Modelo: Dados Tabulares'
 long_description = (
     open('README.rst').read() + '\n' +
