@@ -30,7 +30,7 @@ setup(
     ],
     keywords='interlegis portalmodelo transparencia lrf',
     author='Programa Interlegis',
-    author_email='interlegis@interlegis.leg.br',
+    author_email='ti@interlegis.leg.br',
     url='https://github.com/interlegis/interlegis.portalmodelo.transparency',
     license='GPLv2',
     packages=find_packages('src'),
