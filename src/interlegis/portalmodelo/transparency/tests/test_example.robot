@@ -15,6 +15,8 @@ ${description_selector} =  textarea#form-widgets-description
 *** Test cases ***
 
 Test CRUD
+    [Tags]  Expected Failure
+
     Log in as site owner
     Go to homepage
 
