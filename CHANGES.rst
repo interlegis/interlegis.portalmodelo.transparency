@@ -1,10 +1,11 @@
 Changelog
 =========
 
-y (unreleased)
+1.0b3 (2014-10-21)
 --------------
 
-- Nothing changed yet.
+- Fix tests
+  [hvelarde]
 
 
 1.0b2 (2014-08-25)
