@@ -7,6 +7,9 @@ Changelog
 - Fix tests
   [hvelarde]
 
+- Fix bug where a CSV without titles resulted in wrong html
+  [marciomazza]
+
 
 1.0b2 (2014-08-25)
 ------------------
@@ -22,7 +25,7 @@ Changelog
 ------------------
 
 - First public release
-  [interlegis]
+  [jeanferri]
 
 
 1.0a1 (2014-06-05)
