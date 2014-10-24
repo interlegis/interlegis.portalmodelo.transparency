@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Preparing setup.py for releases
+  [jeanferri]
 
 
 1.0rc1 (2014-10-24)
