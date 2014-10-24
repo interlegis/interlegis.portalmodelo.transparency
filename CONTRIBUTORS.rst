@@ -1,7 +1,9 @@
 Contributors
 ============
 
-* Karyn Nassif
+* Álvaro Justen (rows package)
 * Érico Andrei
-* Álvaro Justen (Pacote rows)
 * Héctor Velarde
+* Jean Ferri
+* Karyn Nassif
+* Marcio Mazza
