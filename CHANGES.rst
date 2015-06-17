@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc3 (unreleased)
+1.0rc3 (2015-06-17)
 -------------------
 
 - Fix test test_setup.py
