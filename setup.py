@@ -3,7 +3,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-version = '1.0rc3'
+version = '1.0rc4.dev0'
 description = 'Tipo de conteúdo do Portal Modelo para publicação de dados estruturados em formato CSV'
 long_description = (
     open('README.rst').read() + '\n' +
