@@ -4,7 +4,8 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Remove incorporated package rows, now using it from PyPI
+  [jeanferri]
 
 
 1.0rc3 (2015-06-17)

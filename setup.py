@@ -46,6 +46,7 @@ setup(
         'plone.dexterity',
         'plone.directives.form',
         'Products.GenericSetup',
+        'rows [html]',
         'setuptools',
         'zope.i18nmessageid',
         'zope.interface',

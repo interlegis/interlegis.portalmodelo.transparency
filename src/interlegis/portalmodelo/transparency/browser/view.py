@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from five import grok
-from interlegis.portalmodelo.transparency import rows
 from interlegis.portalmodelo.transparency.interfaces import ICSVData
 
+import rows
 import StringIO
 
 grok.templatedir('templates')
@@ -72,7 +72,7 @@ class View (grok.View):
         file_data = self._file_data()
         csv = StringIO.StringIO(file_data)
         my_table = rows.import_from_csv(csv)
-        data = my_table.export_to_html()
+        data = rows.export_to_html(my_table)
         # Add class to the table
         data = data.replace('<table>', '<table class="listing">')
         return data
