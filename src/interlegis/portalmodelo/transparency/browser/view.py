@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from five import grok
+from interlegis.portalmodelo.transparency.config import EXTENSIONS_TYPES
 from interlegis.portalmodelo.transparency.interfaces import ICSVData
 
 import rows
@@ -8,9 +9,9 @@ import StringIO
 grok.templatedir('templates')
 
 
-class View (grok.View):
-
-    """CSVData View"""
+class View(grok.View):
+    """CSVData View
+    """
 
     grok.context(ICSVData)
 
@@ -25,13 +26,36 @@ class View (grok.View):
         return file_data.data
 
     def filename(self):
-        """Return content type."""
+        """Return the original file name."""
         file_data = self._file()
         return file_data.filename
 
+    def filename_prefix(self):
+        """Return the file name prefix without extension."""
+        #filename = self.filename().lower()
+        #prefix = filename.split('.')[0]
+        #return prefix.replace(' ', '-')
+        return self.context.id
+
+    def file_extension(self):
+        """Return the file extension without."""
+        filename = self.filename().lower()
+        extension = filename.split('.')[-1]
+        if extension in EXTENSIONS_TYPES:
+            return extension
+        else:
+            return None
+
     def doc_type(self):
         """Return content type."""
-        return 'text/csv'
+        extension = self.file_extension()
+        if extension is not None:
+            if extension in EXTENSIONS_TYPES:
+                return EXTENSIONS_TYPES.get(extension)
+            else:
+                return extension
+        else:
+            return 'unknown'
 
     def period(self):
         """Return period of this info."""
@@ -68,11 +92,19 @@ class View (grok.View):
         return len(lines) - 1
 
     def table(self):
-        """Returns the table with all data."""
+        """Returns the table with all data in rows format."""
         file_data = self._file_data()
-        csv = StringIO.StringIO(file_data)
-        my_table = rows.import_from_csv(csv)
-        data = rows.export_to_html(my_table)
-        # Add class to the table
-        data = data.replace('<table>', '<table class="listing">')
-        return data
+        data = StringIO.StringIO(file_data)
+        table = rows.import_from_csv(data)
+        return table
+
+    def html_table(self):
+        """Returns the table in Plone HTML format."""
+        try:
+            table = self.table()
+        except:
+            return ''
+        html = rows.export_to_html(table)
+        # Add a class Plone style (sort columns) to the HTML table
+        html = html.replace('<table>', '<table class="listing">')
+        return html

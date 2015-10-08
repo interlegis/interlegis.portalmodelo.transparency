@@ -5,6 +5,12 @@ from Products.CMFQuickInstallerTool import interfaces as qi_interfaces
 from zope.interface import implements
 
 PROJECTNAME = 'interlegis.portalmodelo.transparency'
+EXTENSIONS_TYPES = {'csv':'text/csv',
+                    'json':'application/json',
+                    'xls':'application/vnd.ms-excel',
+                    'html':'text/html',
+                    'txt':'text/plain',
+                   }
 
 
 class HiddenProfiles(object):

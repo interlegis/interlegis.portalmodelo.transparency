@@ -2,11 +2,47 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="interlegis.portalmodelo.transparency">
 
   <five:registerPackage package="." />
 
   <grok:grok package="." />
+
+  <browser:view
+    name="download-csv"
+    for="interlegis.portalmodelo.transparency.interfaces.ICSVData"
+    class=".downloads_view.DownloadCSVView"
+    permission="zope.Public"
+    />
+
+  <browser:view
+    name="download-json"
+    for="interlegis.portalmodelo.transparency.interfaces.ICSVData"
+    class=".downloads_view.DownloadJSONView"
+    permission="zope.Public"
+    />
+
+  <browser:view
+    name="download-xls"
+    for="interlegis.portalmodelo.transparency.interfaces.ICSVData"
+    class=".downloads_view.DownloadXLSView"
+    permission="zope.Public"
+    />
+
+  <browser:view
+    name="download-html"
+    for="interlegis.portalmodelo.transparency.interfaces.ICSVData"
+    class=".downloads_view.DownloadHTMLView"
+    permission="zope.Public"
+    />
+
+  <browser:view
+    name="download-txt"
+    for="interlegis.portalmodelo.transparency.interfaces.ICSVData"
+    class=".downloads_view.DownloadTXTView"
+    permission="zope.Public"
+    />
 
 </configure>

@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add buttons for download the table in other formats
+  [jeanferri]
+
 - Remove incorporated package rows, now using it from PyPI
   [jeanferri]
 

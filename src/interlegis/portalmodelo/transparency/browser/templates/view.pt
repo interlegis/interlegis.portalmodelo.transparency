@@ -4,33 +4,58 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     metal:use-macro="context/main_template/macros/master">
 
-    <metal:block fill-slot="content-core">
+    <metal:block fill-slot="content-core"
+                 tal:define="extension view/file_extension;
+                             download_url string:${context/absolute_url}/download;">
         <!-- Metadata -->
         <h3>Metadados</h3>
-        <div>
-            <span tal:condition="view/period">Período: <span tal:replace="view/period">01/2014 a 02/2014</span></span><br />
-            <span tal:condition="context/remoteUrl">Link Externo<a href="" tal:attributes="href string:${context/remoteUrl}"
-            tal:content="context/remoteUrl">Link Externo</a></span><br />
-        </div>
+        <ul>
+            <li>
+                Arquivo original:
+                <a href="" tal:attributes="href string:${context/absolute_url}/@@download/file/${view/filename}">
+                    <tal:filename tal:replace="view/filename"/>
+                </a>
+                <span class="discreet">
+                    &mdash;
+                    <span tal:replace="view/doc_type">ContentType</span>,
+                    <tal:size content="view/display_size">?</tal:size>
+                </span>
+            </li>
+            <li>Número de registros: <span tal:replace="view/number_of_records" /></li>
+            <li tal:condition="view/period">Período: <span tal:replace="view/period">01/2014 a 02/2014</span></li>
+            <li tal:condition="context/remoteUrl">Referência: <a href="" tal:attributes="href string:${context/remoteUrl}"
+                tal:content="context/remoteUrl">Link Externo</a></li>
+        </ul>
         <!-- Download info -->
         <h3>Download</h3>
-        <tal:block>
-          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/file/${view/filename}">
-            <img src="" alt=""
-                 width="48" height="48"
-                 tal:attributes="src string:${context/portal_url}/++resource++interlegis.portalmodelo.transparency/csv_download.png;
-                                 alt string:Icone de Dados Tabulares"/>
-            <tal:filename tal:replace="view/filename"/>
-          </a>
-          <span class="discreet">
-              &mdash;
-              <span tal:replace="view/doc_type">ContentType</span>,
-              <tal:size content="view/display_size">?</tal:size>
-          </span>
-        </tal:block>
+        <a title="Formato CSV"
+           tal:attributes="href python:extension == 'csv' and download_url or download_url+'-csv'">
+            <img alt="Ícone de download do arquivo CSV" width="48" height="48"
+                 tal:attributes="src string:${context/portal_url}/++resource++interlegis.portalmodelo.transparency/csv_download.png" />
+        </a>
+        <a title="Formato JSON"
+           tal:attributes="href python:extension == 'json' and download_url or download_url+'-json'">
+            <img alt="Ícone de download do arquivo JSON" width="48" height="48"
+                 tal:attributes="src string:${context/portal_url}/++resource++interlegis.portalmodelo.transparency/json_download.png" />
+        </a>
+        <a title="Formato XLS"
+           tal:attributes="href python:extension == 'xls' and download_url or download_url+'-xls'">
+            <img alt="Ícone de download do arquivo XLS" width="48" height="48"
+                 tal:attributes="src string:${context/portal_url}/++resource++interlegis.portalmodelo.transparency/xls_download.png" />
+        </a>
+        <a title="Formato HTML"
+           tal:attributes="href python:extension == 'html' and download_url or download_url+'-html'">
+            <img alt="Ícone de download do arquivo HTML" width="48" height="48"
+                 tal:attributes="src string:${context/portal_url}/++resource++interlegis.portalmodelo.transparency/html_download.png" />
+        </a>
+        <a title="Formato TXT"
+           tal:attributes="href python:extension == 'txt' and download_url or download_url+'-txt'">
+            <img alt="Ícone de download do arquivo TXT" width="48" height="48"
+                 tal:attributes="src string:${context/portal_url}/++resource++interlegis.portalmodelo.transparency/txt_download.png" />
+        </a>
         <!-- Data Table -->
         <h3>Dados</h3>
-        <div tal:replace="structure view/table"> </div>
+        <div tal:replace="structure view/html_table"> </div>
     </metal:block>
 
 </html>
