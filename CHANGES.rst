@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc4 (unreleased)
+1.0rc4 (2017-12-08)
 -------------------
 
 - Add buttons for download the table in other formats
