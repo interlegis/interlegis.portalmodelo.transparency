@@ -47,7 +47,7 @@ class DownloadXLSView(BrowserView):
         view = getMultiAdapter((self.context, self.request), name='view')
         table = view.table()
         filename = "%s.xls" % view.filename_prefix()
-        data = rows.export_to_xls(table)
+        data = rows.export_to_html(table)
         self.request.response.setHeader('Content-Type', '"%s"' % EXTENSIONS_TYPES.get('xls'))
         self.request.response.setHeader('Content-Disposition', 'attachment; filename="%s"' % filename)
         return data
