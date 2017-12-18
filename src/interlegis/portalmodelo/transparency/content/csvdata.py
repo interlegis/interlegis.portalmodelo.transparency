@@ -4,7 +4,7 @@ from interlegis.portalmodelo.transparency.interfaces import ICSVData
 from five import grok
 from plone.indexer.decorator import indexer
 from plone.dexterity.content import Container
-from z3c.form.validator import SimpleFieldValidator
+from z3c.form import validator
 from zope.interface import Invalid
 
 
@@ -15,7 +15,7 @@ class CSVData(Container):
     grok.implements(ICSVData)
 
 
-class CSVValidator(SimpleFieldValidator):
+class CSVValidator(validator.SimpleFieldValidator):
 
     def validate(self, value):
         """Garantimos que o tipo do arquivo seja CSV."""
