@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.0rc5 (unreleased)
+1.0rc5 (2018-01-03)
 -------------------
 
-- Nothing changed yet.
+- Change validator import.
+  [rafahela]
 
 
 1.0rc4 (2017-12-08)
