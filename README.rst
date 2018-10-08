@@ -24,3 +24,9 @@ Requisitos
 ----------
 
 Este pacote precisa ser utilzado dentro de um Portal Modelo 3.0.
+
+
+Contribuindo
+============
+
+Para contribuir com o projeto, por favor, leia o `CONTRIBUTING <https://github.com/interlegis/interlegis.portalmodelo.transparency/blob/master/.github/CONTRIBUTING.md>`_.
